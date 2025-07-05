@@ -14,12 +14,12 @@ public partial struct EnemyShootSystem : ISystem{
 
     [BurstCompile]
     public void OnUpdate(ref SystemState state){
-        if (!SystemAPI.TryGetSingleton(out LocalToWorld playerTransform))return;
+        
+        if (!SystemAPI.TryGetSingleton(out LocalToWorld playerTransform)) return;
 
         var ecbSingleton = SystemAPI.GetSingleton<BeginSimulationEntityCommandBufferSystem.Singleton>();
         var ecb = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged);
         float deltaTime = SystemAPI.Time.DeltaTime;
-
 
         foreach (var (gun, gunTransform) in SystemAPI.Query<RefRW<EnemyGun>, RefRO<LocalToWorld>>().WithAll<EnemyTag>()){
             gun.ValueRW.shotCooldown -= deltaTime;
@@ -32,12 +32,10 @@ public partial struct EnemyShootSystem : ISystem{
                 quaternion.LookRotationSafe(fireDirection, math.up()),
                 gun.ValueRO.bulletScale);
             ecb.SetComponent(newBullet, bulletTransform);
-
-            // ecb.AddComponent(newBullet new projectMoveData
-            // {
-            //     linear = fireDirection * gun.ValueRO.shotStrength,
-            //     angular = float3.zero
-            // });
+            ecb.AddComponent(newBullet, new ProjectileMoveData{
+                Direction = fireDirection,
+                Speed = gun.ValueRO.shotStrength
+            });
         }
     }
 }

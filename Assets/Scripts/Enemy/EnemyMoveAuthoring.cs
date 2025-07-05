@@ -4,8 +4,6 @@ using Unity.Entities;
 public class EnemyMoveAuthoring : MonoBehaviour
 {
     public float moveSpeed;
-    public GameObject projectPrefab;
-
     class Baker : Baker<EnemyMoveAuthoring>{
         public override void Bake(EnemyMoveAuthoring authoring){
             var entity = GetEntity(TransformUsageFlags.Dynamic);
