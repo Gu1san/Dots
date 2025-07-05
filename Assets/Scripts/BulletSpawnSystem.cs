@@ -20,6 +20,7 @@ public struct BulletData : IComponentData
 public struct InputData : IComponentData
 {
     public float2 AimDirection;
+    public float2 MoveDirection;
 }
 
 public partial struct BulletSpawnSystem : ISystem

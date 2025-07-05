@@ -1,9 +1,6 @@
 using Unity.Entities;
 
-namespace Game.Components
+public struct MoveSpeed : IComponentData
 {
-    public struct MoveSpeed : IComponentData
-    {
-        public float Value;
-    }
+    public float Value;
 }

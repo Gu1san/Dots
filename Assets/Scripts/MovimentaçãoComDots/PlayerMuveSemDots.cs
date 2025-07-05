@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInputSystem : MonoBehaviour
+public class PlayerMuveSemDots : MonoBehaviour
 {
     [Header("Movimentação")]
     public float moveSpeed = 5f;
