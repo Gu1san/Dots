@@ -32,8 +32,7 @@ public partial struct BulletSpawnSystem : ISystem
     public void OnCreate(ref SystemState state)
     {
         state.RequireForUpdate<PlayerTag>();
-        // Pegue o prefab de algum singleton ou authoring component
-        //bulletPrefab = ...;
+        state.RequireForUpdate<BulletPrefab>();
         shootCooldown = 0.1f;
         timeSinceLastShot = 0;
     }
@@ -69,5 +68,10 @@ public partial struct BulletSpawnSystem : ISystem
 
         ecb.Playback(state.EntityManager);
         ecb.Dispose();
+    }
+
+    public void OnStartRunning(ref SystemState state)
+    {
+        bulletPrefab = SystemAPI.GetSingleton<BulletPrefab>().Value;
     }
 }
