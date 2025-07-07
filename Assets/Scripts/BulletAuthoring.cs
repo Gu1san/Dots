@@ -11,7 +11,7 @@ public class BulletAuthoring : MonoBehaviour
         public override void Bake(BulletAuthoring authoring)
         {
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
-
+            AddComponent<PlayerProjectileTag>(entity);
             AddComponent(entity, new BulletData
             {
                 Speed = authoring.speed,
@@ -21,3 +21,4 @@ public class BulletAuthoring : MonoBehaviour
         }
     }
 }
+public struct PlayerProjectileTag : IComponentData { }
