@@ -60,9 +60,9 @@ public struct DamageJob : ITriggerEventsJob{
     }
 
     private void ApplyDamage(Entity enemyEntity, Entity projectileEntity){
-        Ecb.DestroyEntity(projectileEntity);
         EnemyLife health = EnemyLifeLookup[enemyEntity];
         health.lifeValue -= PlayerProjectileDataLookup[projectileEntity].damage;
         EnemyLifeLookup[enemyEntity] = health;
+        Ecb.DestroyEntity(projectileEntity);
     }
 }

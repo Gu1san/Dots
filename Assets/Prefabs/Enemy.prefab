@@ -186,5 +186,5 @@ MonoBehaviour:
   stopDistance: 5
   bulletPrefab: {fileID: 5416492605876914337, guid: 6afeb1314421a1349bf4552d3775b6a4, type: 3}
   bulletStrength: 10
-  fireRate: 1
+  fireRate: 3
   bulletScale: 0.5

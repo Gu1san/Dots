@@ -2,7 +2,6 @@ using Unity.Entities;
 using Unity.Burst;
 using Unity.Transforms;
 using Unity.Mathematics;
-using UnityEngine;
 
 public partial struct EnemyMoveSystem : ISystem
 {
