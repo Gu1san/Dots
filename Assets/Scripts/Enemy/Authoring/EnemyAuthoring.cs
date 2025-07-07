@@ -1,5 +1,7 @@
 using UnityEngine;
 using Unity.Entities;
+using Unity.Physics;
+using Unity.Physics.Authoring;
 
 public class EnemyAuthoring : MonoBehaviour
 {
@@ -26,14 +28,12 @@ public class EnemyAuthoring : MonoBehaviour
 
             AddComponent(entity, new EnemyLife { lifeValue = authoring.initialLife });
 
-            AddComponent(entity, new MoveSpeedEnemy
-            {
+            AddComponent(entity, new MoveSpeedEnemy{
                 value = authoring.moveSpeed,
                 stopValue = authoring.stopDistance
             });
 
-            AddComponent(entity, new EnemyGun
-            {
+            AddComponent(entity, new EnemyGun{
                 bulletPrefab = GetEntity(authoring.bulletPrefab, TransformUsageFlags.Dynamic),
                 bulletScale = authoring.bulletScale,
                 shotStrength = authoring.bulletStrength,

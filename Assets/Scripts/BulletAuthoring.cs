@@ -5,6 +5,7 @@ public class BulletAuthoring : MonoBehaviour
 {
     public float speed = 10f;
     public float lifetime = 3f;
+    public float bulletDamage;
 
     class Baker : Baker<BulletAuthoring>
     {
@@ -16,6 +17,7 @@ public class BulletAuthoring : MonoBehaviour
             {
                 Speed = authoring.speed,
                 Lifetime = authoring.lifetime,
+                damage = authoring.bulletDamage,
                 TimeAlive = 0f
             });
         }

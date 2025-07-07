@@ -14,6 +14,7 @@ public struct BulletData : IComponentData
     public float Speed;
     public float Lifetime;
     public float TimeAlive;
+    public float damage;
 }
 
 // Define the InputData component

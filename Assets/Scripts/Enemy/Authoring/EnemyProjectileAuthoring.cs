@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ProjectileAuthoring : MonoBehaviour
 {
-    public float ProjectDamage;
+    public float projectDamage;
+    public float projectLifeTime;
     class Baker : Baker<ProjectileAuthoring>
     {
         public override void Bake(ProjectileAuthoring authoring)
@@ -12,7 +13,10 @@ public class ProjectileAuthoring : MonoBehaviour
             var entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent<ProjectileTag>(entity);
             AddComponent(entity, new ProjectileMoveData(){
-                damage = authoring.ProjectDamage
+                damage = authoring.projectDamage
+            });
+            AddComponent(entity, new ProjectileLifetime(){
+                timeRemaining = authoring.projectLifeTime
             });
         }
     }
@@ -23,4 +27,8 @@ public struct ProjectileMoveData : IComponentData
     public float3 Direction;
     public float Speed;
     public float damage;
+}
+
+public struct ProjectileLifetime : IComponentData{
+    public float timeRemaining;
 }

@@ -153,4 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57642956b7df28049ba76d3f40101a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectDamage: 5
+  projectDamage: 5
+  projectLifeTime: 2

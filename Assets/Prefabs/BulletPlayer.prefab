@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfce57df704674f41b9ff3bc7bf1fd2a, type: 2}
+  - {fileID: 2100000, guid: a1e71a0bd37a7ce46a948b137a5b91c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,10 +96,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6892389773029316384}
   - component: {fileID: 3018033612576290479}
-  - component: {fileID: 255386500382277261}
-  - component: {fileID: 5349526974906350610}
+  - component: {fileID: 2233416424453436466}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BulletPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,40 +135,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.16657877, z: 1}
-  m_Center: {x: 0, y: -0.0038957596, z: 0}
---- !u!54 &255386500382277261
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5416492605876914337}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &5349526974906350610
+  m_Size: {x: 0.6030191, y: 0.16657877, z: 0.7437422}
+  m_Center: {x: 0.010523617, y: -0.0038957596, z: -0.052761912}
+--- !u!114 &2233416424453436466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,13 +150,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5416492605876914337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e940424c2dadb4ab9b7e4699cc724c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f45a1da2db9c914989c1cc95e491c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialLife: 100
-  moveSpeed: 2
-  stopDistance: 5
-  bulletPrefab: {fileID: 5416492605876914337, guid: 6afeb1314421a1349bf4552d3775b6a4, type: 3}
-  bulletStrength: 10
-  fireRate: 1
-  bulletScale: 0.5
+  speed: 0
+  lifetime: 10000
+  bulletDamage: 100
