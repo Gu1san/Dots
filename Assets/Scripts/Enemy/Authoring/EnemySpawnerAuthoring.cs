@@ -8,14 +8,11 @@ public class EnemySpawnerAuthoring : MonoBehaviour
     public float SpawnsPerSecond;
     public float ActivationDistance;
 
-    class Baker : Baker<EnemySpawnerAuthoring>
-    {
-        public override void Bake(EnemySpawnerAuthoring authoring)
-        {
+    class Baker : Baker<EnemySpawnerAuthoring>{
+        public override void Bake(EnemySpawnerAuthoring authoring){
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
-            AddComponent(entity, new ProximitySpawner
-            {
+            AddComponent(entity, new ProximitySpawner{
                 EnemyPrefab = GetEntity(authoring.EnemyPrefab, TransformUsageFlags.Dynamic),
                 SpawnRate = authoring.SpawnsPerSecond,
                 SpawnTimer = 0f,

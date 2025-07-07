@@ -181,7 +181,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 12.83
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -463,7 +463,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 604299240}
-  - component: {fileID: 604299239}
   - component: {fileID: 604299241}
   m_Layer: 0
   m_Name: GameManager
@@ -472,19 +471,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &604299239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604299238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a892603eb12b54e8130ca6031eda3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1466012499156414170, guid: 53a32274cd40cdc4e847bc15d9cf8289, type: 3}
 --- !u!4 &604299240
 Transform:
   m_ObjectHideFlags: 0
@@ -1432,7 +1418,7 @@ Transform:
   m_GameObject: {fileID: 1500263963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.2, y: 0.47, z: -23}
+  m_LocalPosition: {x: -20.4, y: 0.47, z: -21.5}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []

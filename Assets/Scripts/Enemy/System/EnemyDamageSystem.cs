@@ -6,7 +6,6 @@ using Unity.Jobs;
 using Unity.Physics;
 using Unity.Physics.Systems;
 using UnityEngine;
-
 [UpdateInGroup(typeof(PhysicsSystemGroup))]
 [UpdateAfter(typeof(PhysicsSimulationGroup))]
 public partial struct EnemyDamageSystem : ISystem
@@ -47,15 +46,11 @@ public struct DamageJob : ITriggerEventsJob{
         bool isBodyAEnemy = EnemyLookup.HasComponent(entityA);
         bool isBodyBEnemy = EnemyLookup.HasComponent(entityB);
 
-        if (isBodyAProjectile && isBodyBEnemy)
-        {
+        if (isBodyAProjectile && isBodyBEnemy){
             ApplyDamage(entityB, entityA);
-            Debug.Log("Entrei colisão 1");
         }
-        else if (isBodyBProjectile && isBodyAEnemy)
-        {
+        else if (isBodyBProjectile && isBodyAEnemy){
             ApplyDamage(entityA, entityB);
-            Debug.Log("Entrei colisão 2");
         }
     }
 
@@ -63,6 +58,12 @@ public struct DamageJob : ITriggerEventsJob{
         EnemyLife health = EnemyLifeLookup[enemyEntity];
         health.lifeValue -= PlayerProjectileDataLookup[projectileEntity].damage;
         EnemyLifeLookup[enemyEntity] = health;
+        if (EnemyLifeLookup[enemyEntity].lifeValue <= 0)
+        {
+            Debug.Log("Uepa");
+            Ecb.DestroyEntity(enemyEntity);
+            GameManager.instance.AddPoints(10);
+        }
         Ecb.DestroyEntity(projectileEntity);
     }
 }

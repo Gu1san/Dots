@@ -154,4 +154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectDamage: 5
-  projectLifeTime: 2
+  projectLifeTime: 10
